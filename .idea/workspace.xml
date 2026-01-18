@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Primer commit" />
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Primer commit">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,6 +170,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luzyc\PhpstormProjects\SAFAnime\assets" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -182,7 +191,9 @@
       <option name="presentableId" value="Default" />
       <updated>1768245636025</updated>
       <workItem from="1768245637511" duration="1729000" />
-      <workItem from="1768314024562" duration="2752000" />
+      <workItem from="1768314024562" duration="6476000" />
+      <workItem from="1768407220442" duration="2482000" />
+      <workItem from="1768764375280" duration="4733000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
