@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}SAFAnime{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
 
             <!--Import Google Icon Font-->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <!--Import materialize.css-->
-            <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+            <!--Tailwind-->
+            <link rel="stylesheet" href="{{ asset('tailwind.css') }}">
 
             <!--Let browser know website is optimized for mobile-->
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -19,7 +19,8 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <body class="bg-violet-400 text-white min-h-screen">
+        {% include 'partes/navbar.html.twig' %}
         {% block body %}{% endblock %}
     </body>
 </html>

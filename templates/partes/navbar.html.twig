@@ -1,0 +1,32 @@
+<nav class="w-full bg-violet-300 text-violet-900 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+        {# LOGO #}
+        <a href="{{ path('home') }}" class="text-2xl font-bold tracking-wide">
+            SAFAnime
+        </a>
+
+        {# MENÚ #}
+        <ul class="hidden md:flex gap-6 text-lg font-medium">
+            <li><a href="#" class="hover:text-violet-700 transition">Home</a></li>
+            <li><a href="#" class="hover:text-violet-700 transition">Lista Animes</a></li>
+        </ul>
+
+        {# BOTONES DERECHA #}
+        <div class="hidden md:flex items-center gap-3">
+            <a href="#" class="bg-white text-violet-900 px-4 py-2 rounded-lg border border-violet-400 hover:bg-violet-200 transition">
+                Registrarse
+            </a>
+
+            <a href="#" class="bg-violet-500 text-white px-4 py-2 rounded-lg hover:bg-violet-600 transition">
+                Iniciar sesión
+            </a>
+        </div>
+
+        {# BOTÓN MÓVIL #}
+        <button class="md:hidden text-violet-900 text-3xl">
+            ☰
+        </button>
+    </div>
+</nav>
+
