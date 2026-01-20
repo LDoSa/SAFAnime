@@ -1,127 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Migración hecha.&#10;Nota: Al crear la migración me ha dado un error porque doctrine estaba intentando crear una tabla que parece ser una predeterminada suya, ¿cómo lo he solucionado? He borrado la migración de la carpeta y he usado este comando:&#10;php bin/console doctrine:migrations:diff&#10;&#10;Una vez ejecutado, he vuelto ha hacer la migración y todo ha ido bien.">
-      <change afterPath="$PROJECT_DIR$/assets/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/styles/app.tailwind.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partes/navbar.html.twig" afterDir="false" />
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar.">
+      <change afterPath="$PROJECT_DIR$/templates/partes/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/dist/css/materialize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/dist/css/materialize.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/dist/js/materialize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/dist/js/materialize.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/extras/noUiSlider/nouislider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/extras/noUiSlider/nouislider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/extras/noUiSlider/nouislider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/anime.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/autocomplete.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/cards.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/cash.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/characterCounter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/chips.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/collapsible.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/component.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/datepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/forms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/global.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/materialbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/parallax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/pushpin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/range.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/scrollspy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/sidenav.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/slider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/tabs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/tapTarget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/timepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/toasts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/tooltip.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/js/waves.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_badges.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_cards.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_carousel.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_chips.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_collapsible.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_color-classes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_color-variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_datepicker.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_icons-material-design.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_materialbox.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_modal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_navbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_normalize.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_preloader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_pulse.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_sidenav.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_slider.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_table_of_contents.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_tabs.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_tapTarget.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_timepicker.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_toast.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_tooltip.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_transitions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_typography.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/_waves.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_checkboxes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_file-input.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_forms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_input-fields.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_radio-buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_range.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_select.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/components/forms/_switches.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/materialize-css/sass/materialize.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/css/materialize.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/extras/noUiSlider/nouislider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/sidenav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/tabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/js/waves.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/js/waves.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_icons-material-design.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_icons-material-design.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_materialbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_materialbox.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_preloader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_preloader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tapTarget.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_tapTarget.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_transitions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_waves.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/_waves.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_file-input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_file-input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_input-fields.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_input-fields.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_switches.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/materialize-css/sass/components/forms/_switches.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Anime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Anime.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partes/navbar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +46,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/config/packages/asset_mapper.yaml" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\Users\luzyc\PhpstormProjects\SAFAnime" selected_validation_type="LOCAL" web_path_to_validation_script="http://127.0.0.1/" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
@@ -305,7 +192,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.AdminController.php.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "PHP Script.AdminController.php.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -341,7 +230,7 @@
       <workItem from="1768407220442" duration="2482000" />
       <workItem from="1768764375280" duration="11297000" />
       <workItem from="1768780657280" duration="3720000" />
-      <workItem from="1768785158459" duration="10447000" />
+      <workItem from="1768785158459" duration="25095000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -367,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768772735425</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar.">
+      <option name="closed" value="true" />
+      <created>1768837858439</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768837858439</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,6 +274,7 @@
     <MESSAGE value="Primer commit" />
     <MESSAGE value="Más cosas añadidas al proyecto y entities y repositories creados, migración aún no hecha." />
     <MESSAGE value="Migración hecha.&#10;Nota: Al crear la migración me ha dado un error porque doctrine estaba intentando crear una tabla que parece ser una predeterminada suya, ¿cómo lo he solucionado? He borrado la migración de la carpeta y he usado este comando:&#10;php bin/console doctrine:migrations:diff&#10;&#10;Una vez ejecutado, he vuelto ha hacer la migración y todo ha ido bien." />
-    <option name="LAST_COMMIT_MESSAGE" value="Migración hecha.&#10;Nota: Al crear la migración me ha dado un error porque doctrine estaba intentando crear una tabla que parece ser una predeterminada suya, ¿cómo lo he solucionado? He borrado la migración de la carpeta y he usado este comando:&#10;php bin/console doctrine:migrations:diff&#10;&#10;Una vez ejecutado, he vuelto ha hacer la migración y todo ha ido bien." />
+    <MESSAGE value="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar." />
   </component>
 </project>

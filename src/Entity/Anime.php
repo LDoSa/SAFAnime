@@ -15,7 +15,7 @@ class Anime
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?int $ani_id = null;
 
     #[ORM\Column(length: 255)]

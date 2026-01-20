@@ -19,8 +19,9 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body class="bg-violet-400 text-white min-h-screen">
+    <body class="items-center justify-center bg-violet-400 text-white min-h-screen">
         {% include 'partes/navbar.html.twig' %}
         {% block body %}{% endblock %}
+        {% include 'partes/footer.html.twig' %}
     </body>
 </html>
