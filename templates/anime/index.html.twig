@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de Animes{% endblock %}
+
+{% block body %}
+
+    <div class="max-w-7xl mx-auto px-4 py-10"></div>
+        <h1 class="text-5xl font-bold mb-8">Animes</h1>
+        <!--If por si no hay registros en la base de datos (o no se están cargando bien)-->
+        {%if animes is empty %}
+            <p>No hay animes disponibles</p>
+
+        {% else %}
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {% for anime in animes %}
+
+                    <div class="bg-violet-300 text-violet-850 rounded-xl hover:bg-violet-200 shadow-xl transition">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="{{ anime.imagen }}" alt="{{ anime.imagen }}"
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 flex flex-col gap-2">
+                            <h2 class="text-xl">{{ anime.titulo }}</h2>
+                        </div>
+                        <div class="p-4 flex flex-col gap-2">
+                            <a href="{{ path('app_anime_show', {'id': anime.id}) }}">show</a>
+                            <a href="{{ path('app_anime_edit', {'id': anime.id}) }}">edit</a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        {% endif %}
+
+    <a href="{{ path('app_anime_new') }}">Create new</a>
+{% endblock %}

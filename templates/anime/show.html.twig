@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Anime{% endblock %}
+
+{% block body %}
+    <h1>Anime</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ anime.id }}</td>
+            </tr>
+            <tr>
+                <th>Ani_id</th>
+                <td>{{ anime.aniId }}</td>
+            </tr>
+            <tr>
+                <th>Titulo</th>
+                <td>{{ anime.titulo }}</td>
+            </tr>
+            <tr>
+                <th>Imagen</th>
+                <td>{{ anime.imagen }}</td>
+            </tr>
+            <tr>
+                <th>Episodios</th>
+                <td>{{ anime.episodios }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_anime_index') }}">back to list</a>
+
+    <a href="{{ path('app_anime_edit', {'id': anime.id}) }}">edit</a>
+
+    {{ include('anime/_delete_form.html.twig') }}
+{% endblock %}

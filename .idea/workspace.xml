@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar.">
-      <change afterPath="$PROJECT_DIR$/templates/partes/footer.html.twig" afterDir="false" />
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Admin controller creado, muestra 25 datos de la api. Estilo simple aplicado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Anime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Anime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partes/navbar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +226,7 @@
       <workItem from="1768407220442" duration="2482000" />
       <workItem from="1768764375280" duration="11297000" />
       <workItem from="1768780657280" duration="3720000" />
-      <workItem from="1768785158459" duration="25095000" />
+      <workItem from="1768785158459" duration="28535000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -264,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768837858439</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Admin controller creado, muestra 25 datos de la api. Estilo simple aplicado">
+      <option name="closed" value="true" />
+      <created>1768869266833</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768869266833</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +279,7 @@
     <MESSAGE value="Más cosas añadidas al proyecto y entities y repositories creados, migración aún no hecha." />
     <MESSAGE value="Migración hecha.&#10;Nota: Al crear la migración me ha dado un error porque doctrine estaba intentando crear una tabla que parece ser una predeterminada suya, ¿cómo lo he solucionado? He borrado la migración de la carpeta y he usado este comando:&#10;php bin/console doctrine:migrations:diff&#10;&#10;Una vez ejecutado, he vuelto ha hacer la migración y todo ha ido bien." />
     <MESSAGE value="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar." />
+    <MESSAGE value="Admin controller creado, muestra 25 datos de la api. Estilo simple aplicado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin controller creado, muestra 25 datos de la api. Estilo simple aplicado" />
   </component>
 </project>
