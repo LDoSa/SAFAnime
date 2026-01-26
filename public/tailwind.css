@@ -224,9 +224,6 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .mt-6 {
-    margin-top: calc(var(--spacing) * 6);
-  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -254,44 +251,38 @@
   .table {
     display: table;
   }
-  .h-2 {
-    height: calc(var(--spacing) * 2);
+  .h-40 {
+    height: calc(var(--spacing) * 40);
   }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
+  .h-45 {
+    height: calc(var(--spacing) * 45);
   }
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
-  .h-50 {
-    height: calc(var(--spacing) * 50);
+  .h-49 {
+    height: calc(var(--spacing) * 49);
+  }
+  .h-55 {
+    height: calc(var(--spacing) * 55);
+  }
+  .h-60 {
+    height: calc(var(--spacing) * 60);
   }
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
-  .h-75 {
-    height: calc(var(--spacing) * 75);
+  .h-65 {
+    height: calc(var(--spacing) * 65);
   }
-  .h-100 {
-    height: calc(var(--spacing) * 100);
-  }
-  .h-auto {
-    height: auto;
+  .h-70 {
+    height: calc(var(--spacing) * 70);
   }
   .h-full {
     height: 100%;
   }
-  .max-h-full {
-    max-height: 100%;
-  }
   .min-h-screen {
     min-height: 100vh;
-  }
-  .w-auto {
-    width: auto;
   }
   .w-full {
     width: 100%;
@@ -342,9 +333,6 @@
   .border-violet-400 {
     border-color: var(--color-violet-400);
   }
-  .\!bg-violet-900 {
-    background-color: var(--color-violet-900) !important;
-  }
   .bg-violet-300 {
     background-color: var(--color-violet-300);
   }
@@ -353,9 +341,6 @@
   }
   .bg-violet-500 {
     background-color: var(--color-violet-500);
-  }
-  .bg-violet-900 {
-    background-color: var(--color-violet-900);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -398,10 +383,6 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-  .text-6xl {
-    font-size: var(--text-6xl);
-    line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
   .text-9xl {
     font-size: var(--text-9xl);
@@ -494,11 +475,6 @@
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
-    }
-  }
-  .md\:inline-block {
-    @media (width >= 48rem) {
-      display: inline-block;
     }
   }
   .md\:grid-cols-3 {

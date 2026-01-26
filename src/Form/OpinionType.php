@@ -17,10 +17,10 @@ class OpinionType extends AbstractType
         $builder
             ->add('texto')
             ->add('puntuacion')
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'id',
-            ])
+            //->add('user', EntityType::class, [
+                //'class' => User::class,
+                //'choice_label' => 'id',
+            //])
             ->add('anime', EntityType::class, [
                 'class' => Anime::class,
                 'choice_label' => 'id',

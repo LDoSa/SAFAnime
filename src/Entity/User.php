@@ -86,9 +86,14 @@ class User
         return $this;
     }
 
-    public function getRol(): ?int
+    //Voy a modificar el getRol para que sepa cuando es ADMIN y cuando USER
+    public function getRol(): array
     {
-        return $this->rol;
+        if ($this->rol ===1){
+            return ['ROLE_ADMIN'];
+        }
+
+        return ['ROLE_USER'];
     }
 
     public function setRol(int $rol): static
