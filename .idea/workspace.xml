@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Controllers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Entitys faltantes creadas">
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Ranking.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RankingAnime.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +229,7 @@
       <workItem from="1768764375280" duration="11297000" />
       <workItem from="1768780657280" duration="3720000" />
       <workItem from="1768785158459" duration="28535000" />
-      <workItem from="1769285280083" duration="5369000" />
+      <workItem from="1769285280083" duration="6166000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -285,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769450092257</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Entitys faltantes creadas">
+      <option name="closed" value="true" />
+      <created>1769453893274</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1769453893274</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +309,7 @@
     <MESSAGE value="Admin controller creado, muestra 25 datos de la api. Estilo simple aplicado" />
     <MESSAGE value="Crud de Opinion creado.&#10;Nota importante: NO HACER UN MAKE:CRUD PARA USER, PETA EL PROYECTO Y NO ES LA FORMA CORRECTA." />
     <MESSAGE value="Controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controllers" />
+    <MESSAGE value="Entitys faltantes creadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entitys faltantes creadas" />
   </component>
 </project>
