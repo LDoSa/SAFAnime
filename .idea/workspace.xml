@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Crud de Opinion creado.&#10;Nota importante: NO HACER UN MAKE:CRUD PARA USER, PETA EL PROYECTO Y NO ES LA FORMA CORRECTA.">
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Controllers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OpinionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OpinionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/OpinionType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OpinionType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/anime/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +227,7 @@
       <workItem from="1768764375280" duration="11297000" />
       <workItem from="1768780657280" duration="3720000" />
       <workItem from="1768785158459" duration="28535000" />
-      <workItem from="1769285280083" duration="1499000" />
+      <workItem from="1769285280083" duration="5369000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -281,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768916518278</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Controllers">
+      <option name="closed" value="true" />
+      <created>1769450092257</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1769450092257</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +298,7 @@
     <MESSAGE value="Eliminado el materialize por conflictos con tailwind, creado la pagina home y el navbar." />
     <MESSAGE value="Admin controller creado, muestra 25 datos de la api. Estilo simple aplicado" />
     <MESSAGE value="Crud de Opinion creado.&#10;Nota importante: NO HACER UN MAKE:CRUD PARA USER, PETA EL PROYECTO Y NO ES LA FORMA CORRECTA." />
-    <option name="LAST_COMMIT_MESSAGE" value="Crud de Opinion creado.&#10;Nota importante: NO HACER UN MAKE:CRUD PARA USER, PETA EL PROYECTO Y NO ES LA FORMA CORRECTA." />
+    <MESSAGE value="Controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controllers" />
   </component>
 </project>
