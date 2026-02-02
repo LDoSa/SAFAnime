@@ -15,35 +15,35 @@ class RankingAnime
 
     #[ORM\ManyToOne(inversedBy: 'rankingAnimes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?anime $anime = null;
+    private ?Anime $anime = null;
 
     #[ORM\ManyToOne(inversedBy: 'rankingAnimes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?ranking $ranking = null;
+    private ?Ranking $ranking = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getAnime(): ?anime
+    public function getAnime(): ?Anime
     {
         return $this->anime;
     }
 
-    public function setAnime(?anime $anime): static
+    public function setAnime(?Anime $anime): static
     {
         $this->anime = $anime;
 
         return $this;
     }
 
-    public function getRanking(): ?ranking
+    public function getRanking(): ?Ranking
     {
         return $this->ranking;
     }
 
-    public function setRanking(?ranking $ranking): static
+    public function setRanking(?Ranking $ranking): static
     {
         $this->ranking = $ranking;
 

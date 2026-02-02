@@ -28,9 +28,19 @@ class Category
     #[ORM\OneToMany(targetEntity: Ranking::class, mappedBy: 'category')]
     private Collection $rankings;
 
+    /**
+     * @var Collection<int, Anime>
+     */
+    #[ORM\ManyToMany(targetEntity: Anime::class, inversedBy: 'category')]
+    #[ORM\JoinTable(name: 'category_anime')]
+    #[ORM\JoinColumn(name: 'id_category', referencedColumnName: 'id')]
+    #[ORM\InverseJoinColumn(name: 'id_anime', referencedColumnName: 'id')]
+    private Collection $AnimeCategory;
+
     public function __construct()
     {
         $this->rankings = new ArrayCollection();
+        $this->AnimeCategory = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -88,6 +98,30 @@ class Category
                 $ranking->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Anime>
+     */
+    public function getAnimeCategory(): Collection
+    {
+        return $this->AnimeCategory;
+    }
+
+    public function addAnimeCategory(Anime $animeCategory): static
+    {
+        if (!$this->AnimeCategory->contains($animeCategory)) {
+            $this->AnimeCategory->add($animeCategory);
+        }
+
+        return $this;
+    }
+
+    public function removeAnimeCategory(Anime $animeCategory): static
+    {
+        $this->AnimeCategory->removeElement($animeCategory);
 
         return $this;
     }
