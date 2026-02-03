@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Más arreglos de entitys">
-      <change beforePath="$PROJECT_DIR$/.idea/SAFAnime.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAFAnime.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partes/navbar.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Login y registro" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -253,7 +240,7 @@
       <workItem from="1768785158459" duration="28535000" />
       <workItem from="1769285280083" duration="6504000" />
       <workItem from="1769782411373" duration="1808000" />
-      <workItem from="1770053915495" duration="6075000" />
+      <workItem from="1770053915495" duration="6105000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -343,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770053975917</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Login y registro">
+      <option name="closed" value="true" />
+      <created>1770060839823</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1770060839823</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +355,8 @@
     <MESSAGE value="Entitys faltantes creadas" />
     <MESSAGE value="Entitys faltantes arregladas" />
     <MESSAGE value="Más arreglos de entitys" />
-    <option name="LAST_COMMIT_MESSAGE" value="Más arreglos de entitys" />
+    <MESSAGE value="Login y registro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login y registro" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
