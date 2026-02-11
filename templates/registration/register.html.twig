@@ -3,17 +3,68 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <div class="flex justify-center mt-20 mb-16 text-violet-900">
 
-    {{ form_errors(registrationForm) }}
+        <div class="rounded-2xl p-8 max-w-md">
+            <h1 class="text-3xl font-bold text-center mb-6">
+                Crear cuenta
+            </h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+            {{ form_start(registrationForm, { attr: { class: 'space-y-4' } }) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <div>
+                {{ form_label(registrationForm.username, 'Nombre de usuario', { label_attr: { class: 'font-medium' } }) }}
+                {{ form_widget(registrationForm.username, {
+                    attr: {
+                        class: 'w-full mt-1 px-4 py-2 border border-violet-300 rounded-lg focus:ring-violet-500 focus:border-violet-500'
+                    }
+                }) }}
+                {{ form_errors(registrationForm.username) }}
+            </div>
+
+            <div>
+                {{ form_label(registrationForm.email, null, { label_attr: { class: 'font-medium' } }) }}
+                {{ form_widget(registrationForm.email, {
+                    attr: {
+                        class: 'w-full mt-1 px-4 py-2 border border-violet-300 rounded-lg focus:ring-violet-500 focus:border-violet-500'
+                    }
+                }) }}
+                {{ form_errors(registrationForm.email) }}
+            </div>
+
+            <div>
+                {{ form_label(registrationForm.plainPassword, 'Contraseña', { label_attr: { class: 'font-medium' } }) }}
+                {{ form_widget(registrationForm.plainPassword, {
+                    attr: {
+                        class: 'w-full mt-1 px-4 py-2 border border-violet-300 rounded-lg focus:ring-violet-500 focus:border-violet-500'
+                    }
+                }) }}
+                {{ form_errors(registrationForm.plainPassword) }}
+            </div>
+
+            {# TERMS #}
+            <div class="flex items-center gap-2">
+                {{ form_widget(registrationForm.agreeTerms, {
+                    attr: { class: 'h-4 w-4 text-violet-600 border-violet-300 rounded' }
+                }) }}
+                {{ form_label(registrationForm.agreeTerms) }}
+                {{ form_errors(registrationForm.agreeTerms) }}
+            </div>
+
+            <button type="submit"
+                    class="w-full bg-violet-500 text-white py-2 rounded-lg font-medium hover:bg-violet-600 transition">
+                Registrarse
+            </button>
+
+            {{ form_end(registrationForm) }}
+
+            <p class="text-center text-sm mt-4">
+                ¿Ya tienes cuenta?
+                <a href="{{ path('app_login') }}" class="text-violet-600 font-semibold hover:underline">
+                    Inicia sesión
+                </a>
+            </p>
+        </div>
+
+    </div>
 {% endblock %}
