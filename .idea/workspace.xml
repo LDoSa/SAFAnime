@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Commit" />
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Borrado">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Anime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Anime.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,7 +247,7 @@
       <workItem from="1770128519310" duration="2971000" />
       <workItem from="1770825680028" duration="1170000" />
       <workItem from="1770832151427" duration="2543000" />
-      <workItem from="1771247051626" duration="23183000" />
+      <workItem from="1771247051626" duration="24515000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -382,7 +385,23 @@
       <option name="project" value="LOCAL" />
       <updated>1771274724386</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1771274776803</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1771274776803</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Borrado">
+      <option name="closed" value="true" />
+      <created>1771275109522</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1771275109522</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +423,8 @@
     <MESSAGE value="Ahora las reseñas solo se pueden hacer una vez por usuario y anime, falta editar y eliminar" />
     <MESSAGE value="Reseñas terminadas" />
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Borrado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Borrado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

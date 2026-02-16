@@ -33,10 +33,17 @@ class Anime
     #[ORM\OneToMany(targetEntity: Opinion::class, mappedBy: 'anime', orphanRemoval: true)]
     private Collection $OpinionesAnime;
 
+    /**
+     * @var Collection<int, Category>
+     */
+    #[ORM\ManyToMany(targetEntity: Category::class, mappedBy: 'animes')]
+    private Collection $categories;
+
 
     public function __construct()
     {
         $this->OpinionesAnime = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -124,6 +131,33 @@ class Anime
             if ($opinionesAnime->getAnime() === $this) {
                 $opinionesAnime->setAnime(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): static
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories->add($category);
+            $category->addAnime($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): static
+    {
+        if ($this->categories->removeElement($category)) {
+            $category->removeAnime($this);
         }
 
         return $this;
