@@ -1,38 +1,100 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Anime{% endblock %}
+{% block title %}{{ anime.titulo }}{% endblock %}
 
 {% block body %}
-    <h1>Anime</h1>
+    <div class="container mx-auto px-6 py-12">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ anime.id }}</td>
-            </tr>
-            <tr>
-                <th>Ani_id</th>
-                <td>{{ anime.aniId }}</td>
-            </tr>
-            <tr>
-                <th>Titulo</th>
-                <td>{{ anime.titulo }}</td>
-            </tr>
-            <tr>
-                <th>Imagen</th>
-                <td>{{ anime.imagen }}</td>
-            </tr>
-            <tr>
-                <th>Episodios</th>
-                <td>{{ anime.episodios }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="flex flex-col md:flex-row gap-10">
 
-    <a href="{{ path('app_anime_index') }}">back to list</a>
+            <div class="w-10 md:w-[300px] flex-shrink-0">
+                <div class="w-full h-[400px] overflow-hidden rounded-xl shadow-lg bg-gray-200 flex items-center justify-center">
+                    {% if anime.imagen %}
+                        <img src="{{ anime.imagen }}"
+                             alt="{{ anime.titulo }}"
+                             class="w-full h-full object-cover">
+                    {% else %}
+                        <span class="text-gray-500">Sin imagen</span>
+                    {% endif %}
+                </div>
+            </div>
 
-    <a href="{{ path('app_anime_edit', {'id': anime.id}) }}">edit</a>
+            <div class="flex-1">
 
-    {{ include('anime/_delete_form.html.twig') }}
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-6">
+                    {{ anime.titulo }}
+                </h1>
+
+                <div class="space-y-4 text-lg">
+                    <p>
+                        <span class="font-semibold text-gray-700">Episodios:</span>
+                        <span class="text-gray-800">{{ anime.episodios ?: 'N/A' }}</span>
+                    </p>
+                </div>
+
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="{{ path('app_anime_index') }}"
+                       class="px-5 py-2.5 rounded-lg bg-gray-700 hover:bg-gray-800 text-white font-medium shadow transition">
+                        Volver a la lista
+                    </a>
+
+                    <a href="{{ path('app_anime_edit', {'id': anime.id}) }}"
+                       class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow transition">
+                        Editar
+                    </a>
+
+                    <form method="post" action="{{ path('app_anime_delete', {'id': anime.id}) }}" onsubmit="return confirm('¿Seguro que quieres borrar este anime?');" class="inline-block"> <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ anime.id) }}"> <button class="px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-medium shadow transition">Borrar </button></form>
+                </div>
+
+                {# --- FORMULARIO DE OPINIÓN --- #}
+                <div class="mt-10 p-4 bg-violet-50 rounded-xl shadow-md">
+
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Deja tu opinión</h2>
+
+                    {{ form_start(form_opinion) }}
+
+                    <div class="space-y-4">
+                        {{ form_widget(form_opinion) }}
+                    </div>
+
+                    <button type="submit"
+                            class="mt-4 px-5 py-2.5 rounded-lg bg-violet-500 hover:bg-violet-600 text-white font-medium shadow transition">
+                        Enviar opinión
+                    </button>
+
+                    {{ form_end(form_opinion) }}
+
+                </div>
+
+
+                {# --- LISTADO DE OPINIONES --- #}
+                <div class="mt-10 space-y-4">
+
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Opiniones</h2>
+
+                    {% for opinion in anime.OpinionesAnime %}
+                        <div class="p-4 bg-white rounded-xl shadow-md border border-violet-200">
+
+                            <div class="flex justify-between items-center mb-2">
+                                <strong class="text-gray-900">{{ opinion.user.username }}</strong>
+                                <span class="text-violet-600 font-semibold">{{ opinion.puntuacion }}/5</span>
+                            </div>
+
+                            <p class="text-gray-800">{{ opinion.texto }}</p>
+
+                        </div>
+                    {% else %}
+                        <p class="text-gray-700">No hay opiniones aún.</p>
+                    {% endfor %}
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
 {% endblock %}
+

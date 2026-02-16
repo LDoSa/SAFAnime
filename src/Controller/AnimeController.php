@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Anime;
 use App\Form\AnimeType;
+use App\Form\OpinionType;
 use App\Repository\AnimeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,10 +45,21 @@ final class AnimeController extends AbstractController
     }
 
     #[Route('/ver/{id}', name: 'app_anime_show', methods: ['GET'])]
-    public function show(Anime $anime): Response
+    public function show(Anime $anime, EntityManagerInterface $entityManager): Response
     {
+        $user = $this->getUser();
+
+        $opinion = new \App\Entity\Opinion();
+        $opinion->setAnime($anime);
+        if ($user){
+            $opinion->setUser($user);
+        }
+
+        $form_opinion = $this->createForm(\App\Form\OpinionType::class, $opinion);
+
         return $this->render('anime/show.html.twig', [
             'anime' => $anime,
+            'form_opinion' => $form_opinion->createView(),
         ]);
     }
 
