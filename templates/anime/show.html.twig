@@ -3,6 +3,16 @@
 {% block title %}{{ anime.titulo }}{% endblock %}
 
 {% block body %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="mb-4 px-4 py-2 rounded
+                    {% if label == 'success' %}bg-green-200 text-green-800{% endif %}
+                    {% if label == 'error' %}bg-red-200 text-red-800{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
     <div class="container mx-auto px-6 py-12">
 
         <div class="flex flex-col md:flex-row gap-10">
@@ -51,7 +61,10 @@
 
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">Deja tu opinión</h2>
 
-                    {{ form_start(form_opinion) }}
+                    {{ form_start(form_opinion, {
+                        action: path('app_opinion_new', {'animeId': anime.id}),
+                        method: 'POST'
+                    }) }}
 
                     <div class="space-y-4">
                         {{ form_widget(form_opinion) }}

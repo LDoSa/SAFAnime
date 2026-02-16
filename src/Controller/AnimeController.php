@@ -44,7 +44,7 @@ final class AnimeController extends AbstractController
         ]);
     }
 
-    #[Route('/ver/{id}', name: 'app_anime_show', methods: ['GET'])]
+    #[Route('/ver/{id}', name: 'app_anime_show', methods: ['GET', 'POST'])]
     public function show(Anime $anime, EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser();

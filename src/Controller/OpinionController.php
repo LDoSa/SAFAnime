@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Anime;
 use App\Entity\Opinion;
 use App\Entity\User;
 use App\Form\OpinionType;
@@ -24,24 +25,43 @@ final class OpinionController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_opinion_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/new/{animeId}', name: 'app_opinion_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, EntityManagerInterface $entityManager, int $animeId): Response
     {
+        $user = $this->getUser();
+        if (!$user){
+            return $this->redirectToRoute('app_login');
+        }
+
+        $anime = $entityManager->getRepository(Anime::class)->find($animeId);
+        if (!$anime){
+            throw $this->createNotFoundException('Anime not found');
+        }
+
+        $existe = $entityManager->getRepository(Opinion::class)
+            ->findOneBy(['user' => $user, 'anime' => $anime]);
+
+        if ($existe){
+            $this->addFlash('error', 'Opinion already exist');
+            return $this->redirectToRoute('app_anime_show', ['id' => $animeId]);
+        }
+
+
         $opinion = new Opinion();
+        $opinion->setAnime($anime)->setUser($user);
+
         $form = $this->createForm(OpinionType::class, $opinion);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $opinion->setUser(
-                $entityManager->getRepository(User::class)->find(1));
             $entityManager->persist($opinion);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_opinion_index', [], Response::HTTP_SEE_OTHER);
+            $this->addFlash('success', 'Opinion added successfully');
+            return $this->redirectToRoute('app_anime_show', ['id' => $animeId]);
         }
 
         return $this->render('opinion/new.html.twig', [
-            'opinion' => $opinion,
             'form' => $form,
         ]);
     }
