@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Las reseñas ya se ven dentro de su anime">
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Ahora las reseñas solo se pueden hacer una vez por usuario y anime, falta editar y eliminar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/tailwind.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/OpinionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OpinionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/OpinionType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OpinionType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OpinionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OpinionRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/anime/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/opinion/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/opinion/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +251,7 @@
       <workItem from="1770128519310" duration="2971000" />
       <workItem from="1770825680028" duration="1170000" />
       <workItem from="1770832151427" duration="2543000" />
-      <workItem from="1771247051626" duration="14171000" />
+      <workItem from="1771247051626" duration="17770000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -366,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771261446256</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Ahora las reseñas solo se pueden hacer una vez por usuario y anime, falta editar y eliminar">
+      <option name="closed" value="true" />
+      <created>1771265326718</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1771265326718</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +392,8 @@
     <MESSAGE value="Más arreglos de entitys" />
     <MESSAGE value="Login y registro" />
     <MESSAGE value="Las reseñas ya se ven dentro de su anime" />
-    <option name="LAST_COMMIT_MESSAGE" value="Las reseñas ya se ven dentro de su anime" />
+    <MESSAGE value="Ahora las reseñas solo se pueden hacer una vez por usuario y anime, falta editar y eliminar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ahora las reseñas solo se pueden hacer una vez por usuario y anime, falta editar y eliminar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -77,13 +77,21 @@ final class OpinionController extends AbstractController
     #[Route('/{id}/edit', name: 'app_opinion_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Opinion $opinion, EntityManagerInterface $entityManager): Response
     {
+        $user = $this->getUser();
+
+        //Lo siguiente es obviamente para que los usuarios no puedan editar opiniones que no son suyas, así aunque conozcan la url no pueden
+        if (!$user || $opinion->getUser() !== $user){
+            $this->addFlash('error', 'No puedes editar esta opinión');
+            return $this->redirectToRoute('app_anime_show', ['id' => $opinion->getAnime()->getId()]);
+        }
+
         $form = $this->createForm(OpinionType::class, $opinion);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_opinion_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_anime_show', ['id' => $opinion->getAnime()->getId()]);
         }
 
         return $this->render('opinion/edit.html.twig', [
@@ -95,11 +103,19 @@ final class OpinionController extends AbstractController
     #[Route('/{id}', name: 'app_opinion_delete', methods: ['POST'])]
     public function delete(Request $request, Opinion $opinion, EntityManagerInterface $entityManager): Response
     {
+        $user = $this->getUser();
+
+        //Aquí hacemos lo mismo que en editar
+        if (!$user || $opinion->getUser() !== $user){
+            $this->addFlash('error', 'No puedes borrar esta opinión');
+            return $this->redirectToRoute('app_anime_show', ['id' => $opinion->getAnime()->getId()]);
+        }
+
         if ($this->isCsrfTokenValid('delete'.$opinion->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($opinion);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_opinion_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_anime_show', ['id' => $opinion->getAnime()->getId()]);
     }
 }

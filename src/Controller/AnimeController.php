@@ -6,6 +6,7 @@ use App\Entity\Anime;
 use App\Form\AnimeType;
 use App\Form\OpinionType;
 use App\Repository\AnimeRepository;
+use App\Repository\OpinionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,9 +46,11 @@ final class AnimeController extends AbstractController
     }
 
     #[Route('/ver/{id}', name: 'app_anime_show', methods: ['GET', 'POST'])]
-    public function show(Anime $anime, EntityManagerInterface $entityManager): Response
+    public function show(Anime $anime, OpinionRepository $opinionRepository): Response
     {
         $user = $this->getUser();
+
+        $media = $opinionRepository->getMediaForAnime($anime->getId());
 
         $opinion = new \App\Entity\Opinion();
         $opinion->setAnime($anime);
@@ -59,6 +62,7 @@ final class AnimeController extends AbstractController
 
         return $this->render('anime/show.html.twig', [
             'anime' => $anime,
+            'media' => $media,
             'form_opinion' => $form_opinion->createView(),
         ]);
     }

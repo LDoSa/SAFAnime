@@ -16,6 +16,16 @@ class OpinionRepository extends ServiceEntityRepository
         parent::__construct($registry, Opinion::class);
     }
 
+    public function getMediaForAnime(int $animeId): ?float
+    {
+        return $this->createQueryBuilder('o')
+            ->select('AVG(o.puntuacion)')
+            ->where('o.anime = :anime')
+            ->setParameter('anime', $animeId)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
     //    /**
     //     * @return Opinion[] Returns an array of Opinion objects
     //     */
