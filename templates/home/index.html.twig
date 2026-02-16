@@ -4,10 +4,36 @@
 
 {% block body %}
 
-<div class="text-center px-4">
-    <h1 class="mt-10 text-9xl font-extrabold tracking-wide mb-6">SAFAnime</h1>
-    <p class="text-2xl text-violet-200">
-        Tu página donde podrás valorar los animes que te ves
-    </p>
-</div>
+    <div class="text-center px-4">
+        <h1 class="mt-10 text-9xl font-extrabold tracking-wide mb-6">SAFAnime</h1>
+        <p class="text-2xl text-violet-200 mb-12">
+            Tu página donde podrás valorar los animes que te ves
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+
+            <a href="{{ path('app_anime_index') }}"
+               class="block py-6 rounded-xl bg-violet-500 hover:bg-violet-600 text-white text-2xl font-semibold shadow-lg transition">
+                Animes
+            </a>
+
+            <a href="{{ path('app_category_index') }}"
+               class="block py-6 rounded-xl bg-violet-500 hover:bg-violet-600 text-white text-2xl font-semibold shadow-lg transition">
+                Categorías
+            </a>
+
+            <a href="#"
+               class="block py-6 rounded-xl bg-violet-500 hover:bg-violet-600 text-white text-2xl font-semibold shadow-lg transition">
+                Rankings
+            </a>
+
+            <a href="#"
+               class="block py-6 rounded-xl bg-violet-500 hover:bg-violet-600 text-white text-2xl font-semibold shadow-lg transition">
+                Mi perfil
+            </a>
+
+        </div>
+    </div>
+
 {% endblock %}
+
