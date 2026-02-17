@@ -20,8 +20,11 @@ final class AnimeController extends AbstractController
     #[Route(name: 'app_anime_index', methods: ['GET'])]
     public function index(AnimeRepository $animeRepository): Response
     {
+        $animes = $animeRepository->findAll();
+
+
         return $this->render('anime/index.html.twig', [
-            'animes' => $animeRepository->findAll(),
+            'animes' => $animes,
         ]);
     }
 
@@ -52,13 +55,13 @@ final class AnimeController extends AbstractController
 
         $media = $opinionRepository->getMediaForAnime($anime->getId());
 
-        $opinion = new \App\Entity\Opinion();
+        $opinion = new Opinion();
         $opinion->setAnime($anime);
         if ($user){
             $opinion->setUser($user);
         }
 
-        $form_opinion = $this->createForm(\App\Form\OpinionType::class, $opinion);
+        $form_opinion = $this->createForm(OpinionType::class, $opinion);
 
         return $this->render('anime/show.html.twig', [
             'anime' => $anime,
