@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit RankingAnime{% endblock %}
+
+{% block body %}
+    <h1>Edit RankingAnime</h1>
+
+    {{ include('ranking_anime/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_ranking_anime_index') }}">back to list</a>
+
+    {{ include('ranking_anime/_delete_form.html.twig') }}
+{% endblock %}

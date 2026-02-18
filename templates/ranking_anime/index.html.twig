@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RankingAnime index{% endblock %}
+
+{% block body %}
+    <h1>RankingAnime index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Position</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ranking_anime in ranking_animes %}
+            <tr>
+                <td>{{ ranking_anime.id }}</td>
+                <td>{{ ranking_anime.position }}</td>
+                <td>
+                    <a href="{{ path('app_ranking_anime_show', {'id': ranking_anime.id}) }}">show</a>
+                    <a href="{{ path('app_ranking_anime_edit', {'id': ranking_anime.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ranking_anime_new') }}">Create new</a>
+{% endblock %}

@@ -28,9 +28,16 @@ class Category
     #[ORM\ManyToMany(targetEntity: Anime::class, inversedBy: 'categories')]
     private Collection $animes;
 
+    /**
+     * @var Collection<int, Ranking>
+     */
+    #[ORM\OneToMany(targetEntity: Ranking::class, mappedBy: 'category')]
+    private Collection $rankings;
+
     public function __construct()
     {
         $this->animes = new ArrayCollection();
+        $this->rankings = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,6 +89,36 @@ class Category
     public function removeAnime(Anime $anime): static
     {
         $this->animes->removeElement($anime);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Ranking>
+     */
+    public function getRankings(): Collection
+    {
+        return $this->rankings;
+    }
+
+    public function addRanking(Ranking $ranking): static
+    {
+        if (!$this->rankings->contains($ranking)) {
+            $this->rankings->add($ranking);
+            $ranking->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRanking(Ranking $ranking): static
+    {
+        if ($this->rankings->removeElement($ranking)) {
+            // set the owning side to null (unless already changed)
+            if ($ranking->getCategory() === $this) {
+                $ranking->setCategory(null);
+            }
+        }
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -33,6 +35,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    /**
+     * @var Collection<int, Ranking>
+     */
+    #[ORM\OneToMany(targetEntity: Ranking::class, mappedBy: 'user')]
+    private Collection $rankings;
+
+    public function __construct()
+    {
+        $this->rankings = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -115,5 +128,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $data["\0".self::class."\0password"] = hash('crc32c', $this->password);
 
         return $data;
+    }
+
+    /**
+     * @return Collection<int, Ranking>
+     */
+    public function getRankings(): Collection
+    {
+        return $this->rankings;
+    }
+
+    public function addRanking(Ranking $ranking): static
+    {
+        if (!$this->rankings->contains($ranking)) {
+            $this->rankings->add($ranking);
+            $ranking->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRanking(Ranking $ranking): static
+    {
+        if ($this->rankings->removeElement($ranking)) {
+            // set the owning side to null (unless already changed)
+            if ($ranking->getUser() === $this) {
+                $ranking->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

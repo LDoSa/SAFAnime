@@ -39,11 +39,18 @@ class Anime
     #[ORM\ManyToMany(targetEntity: Category::class, mappedBy: 'animes')]
     private Collection $categories;
 
+    /**
+     * @var Collection<int, RankingAnime>
+     */
+    #[ORM\OneToMany(targetEntity: RankingAnime::class, mappedBy: 'anime')]
+    private Collection $rankingAnimes;
+
 
     public function __construct()
     {
         $this->OpinionesAnime = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->rankingAnimes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -158,6 +165,36 @@ class Anime
     {
         if ($this->categories->removeElement($category)) {
             $category->removeAnime($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RankingAnime>
+     */
+    public function getRankingAnimes(): Collection
+    {
+        return $this->rankingAnimes;
+    }
+
+    public function addRankingAnime(RankingAnime $rankingAnime): static
+    {
+        if (!$this->rankingAnimes->contains($rankingAnime)) {
+            $this->rankingAnimes->add($rankingAnime);
+            $rankingAnime->setAnime($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRankingAnime(RankingAnime $rankingAnime): static
+    {
+        if ($this->rankingAnimes->removeElement($rankingAnime)) {
+            // set the owning side to null (unless already changed)
+            if ($rankingAnime->getAnime() === $this) {
+                $rankingAnime->setAnime(null);
+            }
         }
 
         return $this;
