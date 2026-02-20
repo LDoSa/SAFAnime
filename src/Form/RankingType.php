@@ -16,6 +16,7 @@ class RankingType extends AbstractType
         $builder
             ->add('rankingAnimes', CollectionType::class, [
                 'entry_type' => RankingAnimeType::class,
+                'entry_options' => ['max_positions' => $options['max_positions']],
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference' => false,
@@ -27,5 +28,6 @@ class RankingType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Ranking::class,
         ]);
+        $resolver->setDefined(['max_positions']);
     }
 }

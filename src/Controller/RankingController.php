@@ -46,11 +46,13 @@ final class RankingController extends AbstractController
             $ranking->addRankingAnime($rankingAnime);
         }
 
-        $form = $this->createForm(RankingType::class, $ranking);
+        $form = $this->createForm(RankingType::class, $ranking, [
+            'max_positions' => count($ranking->getRankingAnimes())]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $positions = [];
+            $max = count($ranking->getRankingAnimes());
             foreach ($ranking->getRankingAnimes() as $rankingAnime) {
                 $pos = $rankingAnime->getPosition();
                 if ($pos === null){
@@ -60,6 +62,14 @@ final class RankingController extends AbstractController
                         'category' => $category,]);
                 }
                 $pos = (int)$pos;
+
+                if ($pos < 1 || $max < $pos) {
+                    $this->addFlash('error', 'Las posiciones deben estar entre 1 y '.$max.'.');
+                    return $this->render('ranking/new.html.twig', [
+                        'form' => $form->createView(),
+                        'category' => $category,
+                    ]);
+                }
 
                 if (in_array($pos, $positions, true)) {
                     $this->addFlash('error', 'La posición no puede repetirse.');

@@ -18,6 +18,7 @@ class RankingAnimeType extends AbstractType
                 'label' => 'Posición',
                 'attr' => [
                     'min' => 1,
+                    'max' => $options['max_position'] ?? 10,
                 ],
                 'required' => true,
             ]);
@@ -27,6 +28,7 @@ class RankingAnimeType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => RankingAnime::class,
+            'max_positions' => null,
         ]);
     }
 }
