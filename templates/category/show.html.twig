@@ -10,6 +10,7 @@
             {{ category.name }}
         </h1>
 
+        {# Botones de ranking del usuario #}
         {% if app.user %}
             {% set userRanking = category.rankings|filter(r => r.user.id == app.user.id)|first %}
 
@@ -33,13 +34,19 @@
             {% endif %}
         {% endif %}
 
-
-        {% if animes is not empty %}
-
+        {# Ranking por categoría #}
+        {% if ranking is not empty %}
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {% for item in ranking %}
+                    {% set anime = item['anime'] %}
+                    {% set avgPosition = item['avgPosition'] %}
 
-                {% for anime in animes %}
-                    <div class="p-4 flex flex-col items-center text-center">
+                    <div class="p-4 flex flex-col items-center text-center bg-white rounded-xl shadow">
+
+                        <!-- POSICIÓN -->
+                        <div class="text-2xl font-bold text-violet-600 mb-2">
+                            #{{ loop.index }}
+                        </div>
 
                         {% if anime.imagen %}
                             <a href="{{ path('app_anime_show', {'id': anime.id}) }}">
@@ -49,9 +56,14 @@
                             </a>
                         {% endif %}
 
-                        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">
                             {{ anime.titulo }}
                         </h2>
+
+                        <!-- MEDIA -->
+                        <p class="text-gray-600 mb-3">
+                            Puesto medio: {{ avgPosition|number_format(2, '.', ',') }}
+                        </p>
 
                         <a href="{{ path('app_anime_show', {'id': anime.id}) }}"
                            class="mt-auto px-4 py-2 rounded-lg bg-violet-500 hover:bg-violet-600 text-white font-medium shadow transition">
@@ -60,15 +72,11 @@
 
                     </div>
                 {% endfor %}
-
             </div>
-
         {% else %}
-
             <p class="text-center text-gray-700 text-lg mt-10">
-                No hay animes en esta categoría.
+                No hay rankings en esta categoría todavía.
             </p>
-
         {% endif %}
 
         <div class="text-center mt-12">

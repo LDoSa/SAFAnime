@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Limitado las posiciones de los rankings">
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Página estadisticas con los 10 animes mas votados y los 10 animes mejor valorados. Ahora cada anime muestra su media y su total de votos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OpinionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OpinionRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/RankingAnimeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RankingAnimeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/anime/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +250,7 @@
       <workItem from="1770825680028" duration="1170000" />
       <workItem from="1770832151427" duration="2543000" />
       <workItem from="1771247051626" duration="31206000" />
-      <workItem from="1771342924082" duration="28358000" />
+      <workItem from="1771342924082" duration="32171000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -432,7 +428,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771607191255</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Página estadisticas con los 10 animes mas votados y los 10 animes mejor valorados. Ahora cada anime muestra su media y su total de votos">
+      <option name="closed" value="true" />
+      <created>1771687913769</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1771687913769</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +462,8 @@
     <MESSAGE value="Creado Category esta vez bien" />
     <MESSAGE value="Rankings creados" />
     <MESSAGE value="Limitado las posiciones de los rankings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Limitado las posiciones de los rankings" />
+    <MESSAGE value="Página estadisticas con los 10 animes mas votados y los 10 animes mejor valorados. Ahora cada anime muestra su media y su total de votos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Página estadisticas con los 10 animes mas votados y los 10 animes mejor valorados. Ahora cada anime muestra su media y su total de votos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
+use App\Repository\RankingAnimeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,10 +44,19 @@ final class CategoryController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_category_show', methods: ['GET'])]
-    public function show(Category $category): Response
+    public function show(Category $category, RankingAnimeRepository $rankingAnimeRepository): Response
     {
+        $ranking = [];
+        $results = $rankingAnimeRepository->getRankingByCategory($category->getId());
+        foreach ($results as $item) {
+            $ranking[] = [
+                'anime' => $item[0]->getAnime(),
+                'avgPosition' => $item['avgPosition'],
+            ];
+        }
         return $this->render('category/show.html.twig', [
             'category' => $category,
+            'ranking' => $ranking,
             'animes' => $category->getAnimes(),
         ]);
     }
