@@ -16,28 +16,27 @@ class AnimeRepository extends ServiceEntityRepository
         parent::__construct($registry, Anime::class);
     }
 
-    //    /**
-    //     * @return Anime[] Returns an array of Anime objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('a.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    public function getTopRatedAnimes(): array{
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.OpinionesAnime', 'o')
+            ->addSelect('a AS anime', 'AVG(o.puntuacion) AS media', 'COUNT(o.id) AS total')
+            ->groupBy('a.id')
+            ->orderBy('media', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
 
-    //    public function findOneBySomeField($value): ?Anime
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    public function getMostRatedAnimes(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->innerJoin('a.OpinionesAnime', 'o')
+            ->addSelect('a AS anime', 'AVG(o.puntuacion) AS media', 'COUNT(o.id) AS total')
+            ->groupBy('a.id')
+            ->orderBy('total', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
+
 }

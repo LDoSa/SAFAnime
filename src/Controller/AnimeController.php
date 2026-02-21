@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Anime;
+use App\Entity\Opinion;
 use App\Form\AnimeType;
 use App\Form\OpinionType;
 use App\Repository\AnimeRepository;
@@ -54,6 +55,7 @@ final class AnimeController extends AbstractController
         $user = $this->getUser();
 
         $media = $opinionRepository->getMediaForAnime($anime->getId());
+        $total = $opinionRepository->getTotalVotosForAnime($anime->getId());
 
         $opinion = new Opinion();
         $opinion->setAnime($anime);
@@ -66,6 +68,7 @@ final class AnimeController extends AbstractController
         return $this->render('anime/show.html.twig', [
             'anime' => $anime,
             'media' => $media,
+            'total' => $total,
             'form_opinion' => $form_opinion->createView(),
         ]);
     }

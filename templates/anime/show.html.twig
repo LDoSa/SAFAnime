@@ -37,7 +37,7 @@
 
                 {% if media %}
                     <div class="mb-4 text-yellow-600 font-bold text-lg">
-                        {{ media|number_format(1, '.', ',') }}★
+                        {{ media|number_format(1, '.', ',') }}★ ({{ total }})
                     </div>
                 {% else %}
                     <div class="mb-4 text-gray-500">
@@ -98,7 +98,7 @@
 
                             <div class="flex justify-between items-center mb-2">
                                 <strong class="text-gray-900">{{ opinion.user.username }}</strong>
-                                <span class="text-violet-600 font-semibold">{{ opinion.puntuacion }}/5</span>
+                                <span class="text-violet-600 font-semibold">{{ opinion.puntuacion }}★</span>
                             </div>
 
                             <p class="text-gray-800">{{ opinion.texto }}</p>

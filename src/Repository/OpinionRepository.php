@@ -26,6 +26,17 @@ class OpinionRepository extends ServiceEntityRepository
             ->getSingleScalarResult();
     }
 
+    public function getTotalVotosForAnime(int $animeId): int
+    {
+        return $this->createQueryBuilder('o')
+            ->select('COUNT(o.puntuacion)')
+            ->where('o.anime = :anime')
+            ->setParameter('anime', $animeId)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+    }
+
     //    /**
     //     * @return Opinion[] Returns an array of Opinion objects
     //     */

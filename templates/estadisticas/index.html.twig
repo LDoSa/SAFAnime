@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Estadísticas{% endblock %}
+
+{% block body %}
+    <div class="max-w-7xl mx-auto px-4 py-10">
+
+        <h1 class="text-5xl font-extrabold text-center text-gray-900 mb-14">
+            Estadísticas
+        </h1>
+
+        <!-- Top 5 Mejor Valorados -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-violet-600 mb-6 text-center">
+                Top 10 Animes Mejor Valorados
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                {% for item in topRatedAnimes %}
+                    {% set anime = item[0] %}
+                    <div class="bg-violet-200 rounded-xl shadow-lg p-4 flex flex-col items-center border border-violet-400">
+
+                        <img src="{{ anime.imagen }}"
+                             alt="{{ anime.titulo }}"
+                             class="w-full h-40 object-cover rounded-lg shadow mb-4">
+
+                        <h3 class="text-lg font-bold text-gray-900 text-center mb-1">
+                            {{ anime.titulo }}
+                        </h3>
+
+                        <p class="text-yellow-500 font-semibold">
+                            Media: {{ item.media|number_format(1) }}
+                        </p>
+
+                        <p class="text-gray-600">
+                            {{ item.total }} valoraciones
+                        </p>
+                    </div>
+                {% else %}
+                    <p class="text-center text-gray-600 col-span-full">No hay animes con opiniones aún.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-violet-600 mb-6 text-center">
+                Top 10 Animes con Más Opiniones
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+                {% for item in mostRatedAnimes %}
+                    {% set anime = item[0] %}
+
+                    <div class="bg-violet-200 rounded-xl shadow-lg p-4 flex flex-col items-center border border-violet-400">
+
+                        <img src="{{ anime.imagen }}"
+                             alt="{{ anime.titulo }}"
+                             class="w-full h-40 object-cover rounded-lg shadow mb-4">
+
+                        <h3 class="text-lg font-bold text-gray-900 text-center mb-1">
+                            {{ anime.titulo }}
+                        </h3>
+
+                        <p class="text-yellow-500 font-semibold">
+                            Media: {{ item.media|number_format(1) }}
+                        </p>
+
+                        <p class="text-gray-600">
+                            {{ item.total }} valoraciones
+                        </p>
+                    </div>
+                {% else %}
+                    <p class="text-center text-gray-600 col-span-full">No hay animes con opiniones aún.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+    </div>
+{% endblock %}
