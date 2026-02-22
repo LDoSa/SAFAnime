@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 #[Route('/anime')]
@@ -30,6 +31,7 @@ final class AnimeController extends AbstractController
     }
 
     #[Route('/new', name: 'app_anime_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $anime = new Anime();
@@ -74,6 +76,7 @@ final class AnimeController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_anime_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Anime $anime, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(AnimeType::class, $anime);
@@ -92,6 +95,7 @@ final class AnimeController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_anime_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Anime $anime, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$anime->getId(), $request->getPayload()->getString('_token'))) {
@@ -103,6 +107,7 @@ final class AnimeController extends AbstractController
     }
 
     #[Route('/importar/animes', name: 'importar_anime')]
+    #[IsGranted('ROLE_ADMIN')]
     public function import(HttpClientInterface $httpClient, EntityManagerInterface $entityManager): Response{
 
         $todosAnimes = [];

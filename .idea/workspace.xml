@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Ahora en categoría los animes se ordenan por media de puesto">
-      <change afterPath="$PROJECT_DIR$/templates/admin/user_opinions.html.twig" afterDir="false" />
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Admin ahora puede ver todos los usuarios y las opiniones que hacen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +249,7 @@
       <workItem from="1770825680028" duration="1170000" />
       <workItem from="1770832151427" duration="2543000" />
       <workItem from="1771247051626" duration="31206000" />
-      <workItem from="1771342924082" duration="35814000" />
+      <workItem from="1771342924082" duration="36722000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -444,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771695675291</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Admin ahora puede ver todos los usuarios y las opiniones que hacen">
+      <option name="closed" value="true" />
+      <created>1771724027834</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1771724027834</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,6 +479,7 @@
     <MESSAGE value="Limitado las posiciones de los rankings" />
     <MESSAGE value="Página estadisticas con los 10 animes mas votados y los 10 animes mejor valorados. Ahora cada anime muestra su media y su total de votos" />
     <MESSAGE value="Ahora en categoría los animes se ordenan por media de puesto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ahora en categoría los animes se ordenan por media de puesto" />
+    <MESSAGE value="Admin ahora puede ver todos los usuarios y las opiniones que hacen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin ahora puede ver todos los usuarios y las opiniones que hacen" />
   </component>
 </project>
