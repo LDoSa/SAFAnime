@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Vistas restringidas al admin">
+    <list default="true" id="2c1c80d7-01b9-417a-ade7-a3b03389f1aa" name="Changes" comment="Ya se pueden buscar animes y ordenarlos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AnimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AnimeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RankingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RankingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Opinion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Opinion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/OpinionType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OpinionType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RankingAnimeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RankingAnimeType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RankingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RankingType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/user_opinions.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/user_opinions.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/anime/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/anime/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anime/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/opinion/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/opinion/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/opinion/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/opinion/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/opinion/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/opinion/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partes/navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ranking/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ranking/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ranking/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ranking/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +270,8 @@
       <workItem from="1770825680028" duration="1170000" />
       <workItem from="1770832151427" duration="2543000" />
       <workItem from="1771247051626" duration="31206000" />
-      <workItem from="1771342924082" duration="39059000" />
+      <workItem from="1771342924082" duration="39297000" />
+      <workItem from="1771747868500" duration="8150000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit">
       <option name="closed" value="true" />
@@ -461,7 +481,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771724608043</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Ya se pueden buscar animes y ordenarlos">
+      <option name="closed" value="true" />
+      <created>1771727136025</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1771727136025</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,6 +519,7 @@
     <MESSAGE value="Ahora en categoría los animes se ordenan por media de puesto" />
     <MESSAGE value="Admin ahora puede ver todos los usuarios y las opiniones que hacen" />
     <MESSAGE value="Vistas restringidas al admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vistas restringidas al admin" />
+    <MESSAGE value="Ya se pueden buscar animes y ordenarlos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya se pueden buscar animes y ordenarlos" />
   </component>
 </project>

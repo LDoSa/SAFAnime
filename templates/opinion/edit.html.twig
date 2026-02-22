@@ -1,13 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Opinion{% endblock %}
+{% block title %}Editar Opinión{% endblock %}
 
 {% block body %}
-    <h1>Edit Opinion</h1>
 
-    {{ include('opinion/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="max-w-xl mx-auto px-6 py-12">
 
-    <a href="{{ path('app_opinion_index') }}">back to list</a>
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-10 text-center">
+            Editar opinión
+        </h1>
 
-    {{ include('opinion/_delete_form.html.twig') }}
+        <div class="bg-violet-200 border border-violet-400 rounded-xl shadow-lg p-8 mb-8">
+            {{ include('opinion/_form.html.twig', {'button_label': 'Actualizar'}) }}
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+
+            <a href="{{ path('app_opinion_index') }}"
+               class="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow transition">
+                Volver al listado
+            </a>
+
+            <div>
+                {{ include('opinion/_delete_form.html.twig') }}
+            </div>
+
+        </div>
+
+    </div>
+
 {% endblock %}
+

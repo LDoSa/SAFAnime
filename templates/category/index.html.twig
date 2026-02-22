@@ -1,37 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Categorías{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>{{ category.image }}</td>
-                <td>
-                    <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="max-w-6xl mx-auto px-6 py-12">
 
-    <a href="{{ path('app_category_new') }}">Create new</a>
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-10 text-center">
+            Categorías
+        </h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            {% for category in categories %}
+                <div class="bg-violet-200 border border-violet-400 rounded-xl shadow-md p-4 flex flex-col items-center text-center">
+
+                    {% if category.image %}
+                        <img src="{{ category.image }}"
+                             alt="{{ category.name }}"
+                             class="w-full h-40 object-cover rounded-lg shadow mb-4">
+                    {% else %}
+                        <div class="w-full h-40 bg-violet-300 rounded-lg flex items-center justify-center text-white font-bold">
+                            Sin imagen
+                        </div>
+                    {% endif %}
+
+                    <h2 class="text-xl font-semibold text-gray-900 mb-3">
+                        {{ category.name }}
+                    </h2>
+
+                    <div class="flex gap-3 mt-auto">
+                        <a href="{{ path('app_category_show', {'id': category.id}) }}"
+                           class="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg shadow transition">
+                            Ver
+                        </a>
+
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('app_category_edit', {'id': category.id}) }}"
+                               class="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow transition">
+                                Editar
+                            </a>
+                        {% endif %}
+                    </div>
+
+                </div>
+            {% else %}
+                <p class="text-center text-gray-600 col-span-full">No hay categorías creadas.</p>
+            {% endfor %}
+
+        </div>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="text-center mt-12">
+                <a href="{{ path('app_category_new') }}"
+                   class="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-lg shadow transition">
+                    Crear nueva categoría
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
+
 {% endblock %}
+

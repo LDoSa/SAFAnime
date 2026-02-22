@@ -1,13 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Ranking{% endblock %}
+{% block title %}Editar Ranking{% endblock %}
 
 {% block body %}
-    <h1>Edit Ranking</h1>
 
-    {{ include('ranking/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="container mx-auto px-6 py-12">
 
-    <a href="{{ path('app_ranking_index') }}">back to list</a>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="mb-4 px-4 py-2 rounded shadow-md
+            {% if label == 'success' %}bg-green-200 text-green-800{% endif %}
+            {% if label == 'error' %}bg-red-200 text-red-800{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
 
-    {{ include('ranking/_delete_form.html.twig') }}
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-10 text-center">
+            Editar Ranking
+        </h1>
+
+        {{ form_start(form, { attr: { class: 'space-y-8' } }) }}
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+            {% for rankingAnime in form.rankingAnimes %}
+                <div class="p-3 bg-violet-400 rounded-lg shadow-md border border-violet-700 text-white text-center">
+
+                    <div class="h-20 w-full overflow-hidden rounded-md mb-2">
+                        <img src="{{ rankingAnime.vars.data.anime.imagen }}"
+                             alt="{{ rankingAnime.vars.data.anime.titulo }}"
+                             class="w-full h-full object-cover">
+                    </div>
+
+                    <h2 class="text-sm font-semibold mb-2 truncate">
+                        {{ rankingAnime.vars.data.anime.titulo }}
+                    </h2>
+
+                    <div class="flex justify-center">
+                        {{ form_widget(rankingAnime.position, {
+                            attr: {
+                                class: 'w-14 text-center rounded-lg border-2 border-violet-700 bg-white text-violet-900 font-bold focus:ring-violet-500 focus:border-violet-500'
+                            }
+                        }) }}
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="text-center">
+            <button type="submit"
+                    class="mt-6 px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-lg shadow transition">
+                Actualizar Ranking
+            </button>
+        </div>
+
+        {{ form_end(form) }}
+
+        <div class="text-center mt-8">
+            <a href="{{ path('app_ranking_index') }}"
+               class="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow transition">
+                Volver al listado
+            </a>
+        </div>
+
+    </div>
+
 {% endblock %}
+

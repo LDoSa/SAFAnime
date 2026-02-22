@@ -12,8 +12,8 @@
             <input type="text" name="search" value="{{ search }}" placeholder="Buscar anime..."
                    class="px-4 py-2 border rounded-lg flex-1">
             <select name="order" class="px-4 py-2 border rounded-lg">
-                <option value="name" {% if order == 'name' %}selected{% endif %}>Ordenar por nombre</option>
-                <option value="rating" {% if order == 'rating' %}selected{% endif %}>Ordenar por puntuación</option>
+                <option value="name" class="text-black" {% if order == 'name' %}selected{% endif %}>Ordenar por nombre</option>
+                <option value="rating" class="text-black" {% if order == 'rating' %}selected{% endif %}>Ordenar por puntuación</option>
             </select>
             <button type="submit"
                     class="px-4 py-2 bg-violet-500 hover:bg-violet-600 text-white rounded-lg shadow">Filtrar

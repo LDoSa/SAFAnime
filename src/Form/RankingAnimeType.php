@@ -18,7 +18,7 @@ class RankingAnimeType extends AbstractType
                 'label' => 'Posición',
                 'attr' => [
                     'min' => 1,
-                    'max' => $options['max_position'] ?? 10,
+                    'max' => $options['max_positions'] ?? 30,
                 ],
                 'required' => true,
             ]);

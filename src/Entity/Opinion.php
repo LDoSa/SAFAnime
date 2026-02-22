@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OpinionRepository;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OpinionRepository::class)]
@@ -25,6 +26,7 @@ class Opinion
     #[ORM\Column(type: Types::TEXT)]
     private ?string $texto = null;
 
+    #[Assert\Range(min: 1, max: 5, notInRangeMessage: 'La puntuación debe estar entre 1 y 5.')]
     #[ORM\Column]
     private ?int $puntuacion = null;
 

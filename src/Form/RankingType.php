@@ -27,7 +27,7 @@ class RankingType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Ranking::class,
+            'max_positions' => 30,
         ]);
-        $resolver->setDefined(['max_positions']);
     }
 }

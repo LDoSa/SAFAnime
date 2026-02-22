@@ -82,7 +82,7 @@ final class RankingController extends AbstractController
             $entityManager->persist($ranking);
             $entityManager->flush();
             $this->addFlash('success', 'Ranking creado correctamente');
-            return $this->redirectToRoute('app_ranking_show', ['id' => $ranking->getId()]);
+            return $this->redirectToRoute('app_category_show', ['id' => $category->getId()]);
 
         }
 
@@ -109,7 +109,9 @@ final class RankingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_ranking_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_category_show', [
+                'id'=> $ranking->getCategory()->getId(),
+            ]);
         }
 
         return $this->render('ranking/edit.html.twig', [
@@ -126,6 +128,7 @@ final class RankingController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_ranking_index', [], Response::HTTP_SEE_OTHER);
-    }
+        return $this->redirectToRoute('app_category_show', [
+            'id'=> $ranking->getCategory()->getId(),
+        ]);    }
 }

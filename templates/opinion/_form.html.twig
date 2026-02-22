@@ -1,4 +1,85 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="space-y-6">
+
+    {# ⭐ PUNTUACIÓN CON ESTRELLAS ⭐ #}
+    <div>
+        <label class="block text-gray-700 font-semibold mb-2">
+            Puntuación
+        </label>
+
+        <div class="flex gap-1 text-3xl cursor-pointer select-none">
+
+            {% for child in form.puntuacion %}
+                <label class="star-label">
+                    {{ form_widget(child, { attr: { class: 'hidden star-input' } }) }}
+                    <span class="star text-gray-400 hover:text-yellow-400 transition">★</span>
+                </label>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    {# ⭐ COMENTARIO ⭐ #}
+    <div>
+        <label class="block text-gray-700 font-semibold mb-2">
+            Comentario
+        </label>
+
+        {{ form_widget(form.texto, {
+            attr: {
+                class: 'w-full rounded-lg border-2 border-violet-500 bg-white text-gray-900 p-3 focus:ring-violet-500 focus:border-violet-500',
+                rows: 4,
+                placeholder: 'Escribe aquí tu opinión…'
+            }
+        }) }}
+    </div>
+
+</div>
+
+<button type="submit"
+        class="mt-6 px-6 py-3 rounded-lg bg-violet-600 hover:bg-violet-700 text-white font-medium shadow transition">
+    {{ button_label|default('Guardar') }}
+</button>
+
 {{ form_end(form) }}
+
+<script>
+    document.querySelectorAll('.star-label').forEach((label, index, all) => {
+        const input = label.querySelector('.star-input')
+        const star = label.querySelector('.star')
+
+        // ⭐ Hover: ilumina hasta la estrella actual
+        label.addEventListener('mouseover', () => {
+            all.forEach((l, i) => {
+                l.querySelector('.star').classList.toggle('text-yellow-400', i <= index)
+                l.querySelector('.star').classList.toggle('text-gray-400', i > index)
+            })
+        })
+
+        // ⭐ Mouseout: vuelve al valor seleccionado
+        label.addEventListener('mouseout', () => {
+            const selected = [...all].findIndex(l => l.querySelector('.star-input').checked)
+            all.forEach((l, i) => {
+                l.querySelector('.star').classList.toggle('text-yellow-400', i <= selected)
+                l.querySelector('.star').classList.toggle('text-gray-400', i > selected)
+            })
+        })
+
+        // ⭐ Click: selecciona la estrella
+        label.addEventListener('click', () => {
+            input.checked = true
+        })
+    })
+
+    // ⭐ Preseleccionar estrellas si ya hay puntuación (modo edición)
+    const selectedIndex = [...document.querySelectorAll('.star-input')]
+        .findIndex(input => input.checked)
+
+    if (selectedIndex >= 0) {
+        document.querySelectorAll('.star').forEach((star, i) => {
+            star.classList.toggle('text-yellow-400', i <= selectedIndex)
+            star.classList.toggle('text-gray-400', i > selectedIndex)
+        })
+    }
+</script>
