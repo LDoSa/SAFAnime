@@ -20,6 +20,23 @@
             </button>
         </form>
 
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="mb-8 flex gap-4">
+
+                <a href="{{ path('app_anime_new') }}"
+                   class="px-6 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-lg shadow transition">
+                    Crear nuevo anime
+                </a>
+
+                <a href="{{ path('importar_anime') }}"
+                   class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition"
+                   onclick="return confirm('¿Seguro que quieres importar animes desde la API? Esto puede tardar un poco.')">
+                    Importar animes desde API
+                </a>
+
+            </div>
+        {% endif %}
+
         {% if animes is empty %}
             <p>No hay animes disponibles</p>
         {% else %}

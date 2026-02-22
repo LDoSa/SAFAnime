@@ -107,7 +107,43 @@ final class RankingController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $positions = [];
+            $max = count($ranking->getRankingAnimes());
+
+            foreach ($ranking->getRankingAnimes() as $rankingAnime) {
+                $pos = $rankingAnime->getPosition();
+
+                if ($pos === null) {
+                    $this->addFlash('error', 'Todas las posiciones deben estar cubiertas.');
+                    return $this->render('ranking/new.html.twig', [
+                        'ranking' => $ranking,
+                        'form' => $form,
+                    ]);
+                }
+                $pos = (int)$pos;
+                if ($pos < 1 || $max < $pos) {
+                    $this->addFlash('error', 'Las posiciones deben estar entre 1 y ' . $max . '.');
+                    return $this->render('ranking/new.html.twig', [
+                        'ranking' => $ranking,
+                        'form' => $form,
+                    ]);
+                }
+
+                if (in_array($pos, $positions, true)) {
+                    $this->addFlash('error', 'La posiciones no pueden repetirse.');
+                    return $this->render('ranking/new.html.twig', [
+                        'ranking' => $ranking,
+                        'form' => $form,
+                    ]);
+                }
+                $positions[] = $pos;
+            }
+
             $entityManager->flush();
+            $this->addFlash('success', 'Ranking actualizado correctamente');
+
+            return $this->redirectToRoute('app_category_show', ['id' => $ranking->getCategory()->getId()]);
+
 
             return $this->redirectToRoute('app_category_show', [
                 'id'=> $ranking->getCategory()->getId(),

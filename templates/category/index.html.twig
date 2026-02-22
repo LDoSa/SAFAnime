@@ -30,6 +30,7 @@
                     </h2>
 
                     <div class="flex gap-3 mt-auto">
+
                         <a href="{{ path('app_category_show', {'id': category.id}) }}"
                            class="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg shadow transition">
                             Ver
@@ -40,7 +41,17 @@
                                class="px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow transition">
                                 Editar
                             </a>
+
+                            <form method="post"
+                                  action="{{ path('app_category_delete', {'id': category.id}) }}"
+                                  onsubmit="return confirm('¿Seguro que quieres borrar esta categoría?');">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
+                                <button class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow transition">
+                                    Borrar
+                                </button>
+                            </form>
                         {% endif %}
+
                     </div>
 
                 </div>
@@ -62,4 +73,3 @@
     </div>
 
 {% endblock %}
-

@@ -34,16 +34,16 @@
             {% endif %}
         {% endif %}
 
-        {# Ranking por categoría #}
+        {# ⭐ SI HAY RANKINGS → MOSTRAR ORDENADOS ⭐ #}
         {% if ranking is not empty %}
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
                 {% for item in ranking %}
                     {% set anime = item['anime'] %}
                     {% set avgPosition = item['avgPosition'] %}
 
                     <div class="p-4 flex flex-col items-center text-center bg-white rounded-xl shadow">
 
-                        <!-- POSICIÓN -->
                         <div class="text-2xl font-bold text-violet-600 mb-2">
                             #{{ loop.index }}
                         </div>
@@ -60,7 +60,6 @@
                             {{ anime.titulo }}
                         </h2>
 
-                        <!-- MEDIA -->
                         <p class="text-gray-600 mb-3">
                             Puesto medio: {{ avgPosition|number_format(2, '.', ',') }}
                         </p>
@@ -73,10 +72,40 @@
                     </div>
                 {% endfor %}
             </div>
+
         {% else %}
-            <p class="text-center text-gray-700 text-lg mt-10">
+
+            {# ⭐ NO HAY RANKINGS → MOSTRAR ANIMES DE LA CATEGORÍA ⭐ #}
+
+            <p class="text-center text-gray-700 text-lg mt-10 mb-8">
                 No hay rankings en esta categoría todavía.
             </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {% for anime in category.animes %}
+                    <div class="p-4 flex flex-col items-center text-center bg-white rounded-xl shadow">
+
+                        {% if anime.imagen %}
+                            <a href="{{ path('app_anime_show', {'id': anime.id}) }}">
+                                <img src="{{ anime.imagen }}"
+                                     alt="{{ anime.titulo }}"
+                                     class="w-full h-60 object-cover rounded-lg shadow mb-4">
+                            </a>
+                        {% endif %}
+
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">
+                            {{ anime.titulo }}
+                        </h2>
+
+                        <a href="{{ path('app_anime_show', {'id': anime.id}) }}"
+                           class="mt-auto px-4 py-2 rounded-lg bg-violet-500 hover:bg-violet-600 text-white font-medium shadow transition">
+                            Ver detalles
+                        </a>
+
+                    </div>
+                {% endfor %}
+            </div>
+
         {% endif %}
 
         <div class="text-center mt-12">
