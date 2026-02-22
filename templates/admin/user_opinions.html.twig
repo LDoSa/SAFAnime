@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Opiniones de {{ user.email }}{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto px-6 py-12">
+        <h1 class="text-3xl font-bold mb-6">Opiniones de {{ user.email }}</h1>
+
+        {% if opinions is not empty %}
+            <ul class="space-y-4">
+                {% for opinion in opinions %}
+                    <li class="bg-white p-4 rounded-xl shadow">
+                        <strong>{{ opinion.anime.titulo }}</strong><br>
+                        Puntuación: {{ opinion.puntuacion }} ★<br>
+                        Comentario: {{ opinion.texto ?: 'Sin comentario' }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Este usuario no ha dado opiniones todavía.</p>
+        {% endif %}
+
+        <div class="mt-6">
+            <a href="{{ path('app_admin') }}"
+               class="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg shadow">
+                Volver al panel de administración
+            </a>
+        </div>
+    </div>
+{% endblock %}

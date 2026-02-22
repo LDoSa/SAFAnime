@@ -3,7 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Anime;
+use App\Entity\User;
+use App\Repository\OpinionRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -11,28 +15,24 @@ use Symfony\Component\Routing\Attribute\Route;
 final class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
-    public function index(HttpClientInterface $httpClient): Response
+    #[IsGranted('ROLE_ADMIN')]
+    public function index(UserRepository $userRepository): Response
     {
-        $response = $httpClient->request(
-            'GET',
-            'https://api.jikan.moe/v4/anime'
-        );
-
-        $content = $response->toArray();
-
-        foreach ($content['data'] as $elemento) {
-
-            $anime = new Anime();
-
-            $anime->setAniId($elemento['mal_id']);
-            $anime->setTitulo($elemento['title']);
-            $anime->setImagen($elemento['images']['jpg']['image_url']);
-            $anime->setEpisodios($elemento['episodes']);
-        }
+        $users = $userRepository->findAll();
 
         return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
-            'anime' => $content['data'],
+            'users' => $users,
+        ]);
+    }
+
+    #[Route('/admin/user/{id}/opinions', name: 'app_admin_user_opinions')]
+    #[IsGranted('ROLE_ADMIN')]
+    public function userOpinions(User $user, OpinionRepository $opinionRepository): Response
+    {
+        $opinions = $opinionRepository->findBy(['user' => $user]);
+        return $this->render('admin/user_opinions.html.twig', [
+            'user' => $user,
+            'opinions' => $opinions,
         ]);
     }
 }
