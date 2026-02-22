@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Anime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -39,4 +40,27 @@ class AnimeRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function searchAnimes(string $search): QueryBuilder
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        if ($search) {
+            $qb->andWhere('a.titulo LIKE :search')
+                ->setParameter('search', '%' . $search . '%');
+        }
+
+        return $qb;
+    }
+
+    public function orderByRating($qb){
+        return $qb
+            ->leftJoin('a.OpinionesAnime', 'o')
+            ->groupBy('a.id')
+            ->orderBy('AVG(o.puntuacion)', 'DESC');
+    }
+
+    public function orderByName($qb)
+    {
+        return $qb->orderBy('a.titulo', 'ASC');
+    }
 }

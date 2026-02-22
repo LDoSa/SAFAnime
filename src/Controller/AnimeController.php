@@ -20,13 +20,25 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 final class AnimeController extends AbstractController
 {
     #[Route(name: 'app_anime_index', methods: ['GET'])]
-    public function index(AnimeRepository $animeRepository): Response
+    public function index(AnimeRepository $animeRepository, Request $request): Response
     {
-        $animes = $animeRepository->findAll();
+        $search = $request->query->get('search', '');
+        $order = $request->query->get('order', 'name');
+        $qb = $animeRepository->searchAnimes($search);
+
+        if ($order === 'rating') {
+            $qb = $animeRepository->orderByRating($qb);
+        } else {
+            $qb = $animeRepository->orderByName($qb);
+        }
+
+        $animes = $qb->getQuery()->getResult();
 
 
         return $this->render('anime/index.html.twig', [
             'animes' => $animes,
+            'search' => $search,
+            'order' => $order,
         ]);
     }
 
